@@ -2,13 +2,35 @@ body {
     background: rgb(51, 29, 44);
     font-family: Arial, sans-serif;
     color: rgb(239, 225, 209);
+    background: #8360c3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
 }
 
 h1 {
-    color: rgb(255, 204, 0);
     text-align: center;
-    font-size: 36px;
+    font-size: 300%;
+    margin-top: 20%;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    -webkit-background-clip: text;
+    /* Apply the gradient to the text content */
+    background-clip: text;
+    /* Apply the gradient to the text content */
+    color: transparent;
+    /* Set the text color to transparent so the gradient shows through */
+
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+
 }
+
+
 
 .page {
     display: flex;
@@ -17,39 +39,72 @@ h1 {
     max-width: 100%;
     margin: 20px auto;
     padding: 20px;
-    border: 5px solid rgb(63, 46, 62);
-    background-color: rgba(167, 130, 149, 0.9);
+    border: 5px solid rgb(63, 46, 62, 0.4);
+    background-color: rgba(167, 130, 149, 0.3);
     border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+    /* Add transition for opacity property */
+
+
+}
+
+
+/* Styling for the content section */
+.page div {
+    font-size: 110%;
+
+}
+
+/* Text */
+.page div div:nth-child(1) {
+    font-size: 110%;
 }
 
 nav {
     display: flex;
-    justify-content: center; /* This centers the flex items (li elements) horizontally */
-  }
-  
-  nav ul {
+    justify-content: center;
+    /* This centers the flex items (li elements) horizontally */
+}
+
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     display: inline;
     margin: 0 10px;
-  }
-  
-  nav ul li button {
-    background: rgb(255, 204, 0);
-    border: 5px solid rgb(63, 46, 62);
+}
+
+nav ul li button {
+    background: none;
+    border: none;
     color: rgb(51, 29, 44);
     font-size: 150%;
     cursor: pointer;
-    transition: color 0.3s ease;
-  }
-   
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* Add transition for color and background-color */
+
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    -webkit-background-clip: text;
+    /* Apply the gradient to the text content */
+    background-clip: text;
+    /* Apply the gradient to the text content */
+    color: transparent;
+    /* Set the text color to transparent so the gradient shows through */
+
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
 
 nav ul li button:hover {
     color: rgb(255, 255, 255);
+    background-color: rgb(167, 130, 149);
+    /* Add a background color change on hover */
+    transform: scale(1.05);
+    /* Add a slight scale effect on hover */
 }
 
 #hamIcon {
@@ -377,7 +432,7 @@ nav ul li button:hover {
 .Coated div:nth-child(1) {
     flex: 2;
     text-align: right;
-    padding-top: 1%;
+    padding-top: 4%;
     padding-right: 6.5%;
 }
 
@@ -517,9 +572,20 @@ nav ul li button:hover {
 
     #hamIcon {
         display: block;
-        border: 5px solid rgb(63, 46, 62);
-        background: rgb(255, 204, 0);
+        border: none;
+        background: none;
         color: rgb(51, 29, 44);
+
+        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+        -webkit-background-clip: text;
+        /* Apply the gradient to the text content */
+        background-clip: text;
+        /* Apply the gradient to the text content */
+        color: transparent;
+        /* Set the text color to transparent so the gradient shows through */
+
+        background-size: 400% 400%;
+        animation: gradientAnimation 5s ease infinite;
     }
 
     #menuList.menuShow {
@@ -534,66 +600,32 @@ nav ul li button:hover {
     .page {
         max-width: 80%;
     }
-    
 
-    /* PAGE 1 */
-    /* Origin */
-    .Origin {
+    /* Styling for the content section */
+    .page div {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .Origin div:nth-child(1) {
-        text-align: center;
+        font-size: 90%;
+
     }
 
-    /* Evolution */
-    .Evolution {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .Evolution div:nth-child(1) {
+    /* Text */
+    .page div div:nth-child(1) {
         text-align: center;
+        font-size: 90%;
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
     }
 
-    /* Standardization */
-    .Standardization {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .Standardization div:nth-child(1) {
-        text-align: center;
+    50% {
+        background-position: 100% 50%;
     }
 
-    /* Television */
-    .Television {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .Television div:nth-child(1) {
-        text-align: center;
-    }
-
-    /* Professionalization */
-    .Professionalization {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .Professionalization div:nth-child(1) {
-        text-align: center;
-    }
-
-    /* Popularity & Global Reach */
-    .PGR {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .PGR div:nth-child(1) {
-        text-align: center;
+    100% {
+        background-position: 0% 50%;
     }
 }
