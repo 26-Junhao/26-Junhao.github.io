@@ -13,25 +13,31 @@ function hideall() { //function to hide all pages
         onepage.style.display = "none"; //hide it
     }
 }
-function show(pgno) { //function to show selected page no
-    hideall();
-    //select the page based on the parameter passed in
+function show(pgno) {
+    // Get the selected page based on the parameter passed in
     let onepage = document.querySelector("#page" + pgno);
-    //show the page
-    onepage.style.display = "block";
-}
+  
+    // Check if the page is already visible
+    if (onepage.style.display === "block") {
+      // If the page is visible, hide it
+      onepage.style.display = "none";
+    } else {
+      // If the page is hidden, hide all other pages and show this page
+      hideall(); // Hide all other pages
+      onepage.style.display = "block"; // Show the selected page
+    }
+  }
 /*Listen for clicks on the buttons, assign anonymous
 eventhandler functions to call show function*/
 page1btn.addEventListener("click", function () {
     show(1);
-});
-page2btn.addEventListener("click", function () {
+  });
+  page2btn.addEventListener("click", function () {
     show(2);
-});
-page3btn.addEventListener("click", function () {
+  });
+  page3btn.addEventListener("click", function () {
     show(3);
-});
-
+  });
 
 
 /*for hamMenu */
