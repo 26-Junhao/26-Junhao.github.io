@@ -82,3 +82,32 @@ function toggleMenus() {
     menuItemsList.classList.toggle("menuShow");
 }
 
+
+//FADE IN FOR CONTENT
+document.addEventListener("DOMContentLoaded", function () {
+    const windowHeight = window.innerHeight;
+
+    function revealSectionOnScroll(sectionElement) {
+        const sectionTop = sectionElement.getBoundingClientRect().top;
+        const sectionBottom = sectionElement.getBoundingClientRect().bottom;
+        const sectionHeight = sectionBottom - sectionTop;
+        const sectionMidpoint = sectionTop + sectionHeight / 2;
+
+        if (sectionMidpoint < windowHeight && sectionMidpoint > 0) {
+            sectionElement.classList.add("fade-in");
+            sectionElement.classList.remove("fade-out");
+        } else {
+            sectionElement.classList.remove("fade-in"); // Remove the class if not in the middle
+            sectionElement.classList.add("fade-out");
+        }
+    }
+
+    const sections = document.querySelectorAll(".Evolution, .Standardization, .Television, .Professionalization, .PGR ,.FrontLoad,.BackLoad,.Coated,.PaulLim,.Gerwen");
+    sections.forEach((section) => {
+        window.addEventListener("scroll", function () {
+            revealSectionOnScroll(section);
+        });
+        revealSectionOnScroll(section);
+    });
+});
+
