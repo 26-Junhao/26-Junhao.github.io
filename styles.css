@@ -1,7 +1,6 @@
 body {
-    background: rgb(51, 29, 44);
     font-family: Arial, sans-serif;
-    color: rgb(239, 225, 209);
+    color: #0f0c29;
     background: #8360c3;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
